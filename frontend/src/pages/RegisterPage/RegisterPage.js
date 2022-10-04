@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
     const RegisterUser = (event) => {
 
-        axios.post(`${BASE_URL}`, form)
+        axios.post(`${BASE_URL}/users/createUser`, form)
         .then((res) => {
             setUserList(res.data)
         })
