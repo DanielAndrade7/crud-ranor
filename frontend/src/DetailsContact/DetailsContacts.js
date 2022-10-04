@@ -5,22 +5,22 @@ import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 import { useState } from "react"
 
-export const DetailsContacts = ({contact}) => {
+export const DetailsContacts = ({ contact }) => {
 
-    const {id, name, email, phone} = contact
+    const { id, name, email, phone } = contact
 
     const { form, onChange, cleanFields } = useForm({
         name,
         email,
         phone
     })
-    
+
     const [user, setUser] = useState()
 
     // const navigate = useNavigate()
 
-        const editUser = (id) => {
-        axios.put(`${BASE_URL}/users/editUser/${id}`)
+    const editUser = () => {
+        axios.put(`${BASE_URL}/users/editUser/${id}`, {name: form.name, email: form.email, phone: form.phone})
             .then((res) => {
                 console.log(setUser)
                 setUser(res.data)

@@ -40,6 +40,7 @@ export class UserController {
     public editUser = async (req: Request, res: Response) => {
         try {
             const {name, email, phone} = req.body
+            
             const { id } = req.params
 
             const input: IEditPostInput = {
@@ -52,7 +53,7 @@ export class UserController {
             const response = this.userBusiness.editUser(input)
             
             res.status(200).send(response)
-            
+
         } catch (error: any) {
              res.status(error.statusCode || 500).send({message: error.message})
         }
