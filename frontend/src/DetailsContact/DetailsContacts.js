@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import useForm from "../hooks/useForm"
-import { Container, InputContainer } from "./styled"
+import { Container, InputContainer, SendButton, TitleContainer, Label, Wrapper, Input, ShadowModal } from "./styled"
 import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 import { useState } from "react"
@@ -32,10 +32,14 @@ export const DetailsContacts = ({ contact }) => {
         cleanFields()
     }
 
-    return (
+    return ( <>
+        <ShadowModal></ShadowModal>
         <Container>
+            <TitleContainer>Edite</TitleContainer>
             <InputContainer onSubmit={editUser} >
-                <input
+                <Wrapper>
+                <Label>Nome:</Label>
+                <Input
                     name={"name"}
                     placeholder="Name"
                     value={form.name}
@@ -44,7 +48,10 @@ export const DetailsContacts = ({ contact }) => {
                     pattern={"^.{3,}"}
                     title={"The name must have at least 3 characters"}
                 />
-                <input
+                </Wrapper>
+                <Wrapper>
+                <Label>E-mail:</Label>
+                <Input
                     name={"email"}
                     placeholder="Email"
                     value={form.email}
@@ -52,7 +59,10 @@ export const DetailsContacts = ({ contact }) => {
                     onChange={onChange}
                     required
                 />
-                <input
+                </Wrapper>
+                <Wrapper>
+                <Label>Telefone:</Label>
+                <Input
                     name={"phone"}
                     placeholder="Phone"
                     value={form.phone}
@@ -61,10 +71,12 @@ export const DetailsContacts = ({ contact }) => {
                     pattern={"^.{11,}"}
                     title={"The phone must have at least 11 numbers"}
                 />
-                <button>Save</button>
+                </Wrapper>
+                <SendButton>Save</SendButton>
+                <SendButton>Contacts</SendButton>
             </InputContainer >
 
-            <button>Contacts</button>
         </Container>
+        </>
     )
 }

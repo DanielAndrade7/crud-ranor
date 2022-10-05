@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useForm from "../../hooks/useForm"
-import { InputContainer, SendButton, Container, TitleContainer, RegisterContainer, GoBackButton } from './styled'
+import { InputContainer, SendButton, Container, TitleContainer, RegisterContainer, GoBackButton, Input, Wrapper, Label } from './styled'
 import { goTo } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
@@ -35,35 +35,41 @@ const RegisterPage = () => {
     return (
         <Container>
             <RegisterContainer>
-                <TitleContainer>Complete with your credencials</TitleContainer>
+                <TitleContainer>Faça o cadastro</TitleContainer>
                 <InputContainer onSubmit={RegisterUser} >
-                    <input
+                    <Wrapper>
+                        <Label>Nome:</Label>
+                        <Input
                         name={"name"}
-                        placeholder="Name"
                         value={form.name}
                         onChange={onChange}
                         required
                         pattern={"^.{3,}"}
                         title={"The name must have at least 3 characters"}
                     />
-                    <input
+                    </Wrapper>
+                    <Wrapper>
+                        <Label>E-mail:</Label>
+                    <Input
                         name={"email"}
-                        placeholder="Email"
                         value={form.email}
                         type={"email"}
                         onChange={onChange}
                         required
                     />
-                    <input
+                    </Wrapper>
+                    <Wrapper>
+                        <Label>Telefone:</Label>
+                    <Input
                         name={"phone"}
-                        placeholder="Phone"
                         value={form.phone}
                         onChange={onChange}
                         required
                         pattern={"^.{11,}"}
                         title={"The phone must have at least 11 numbers"}
                     />
-                    <SendButton>Register</SendButton>
+                    </Wrapper>
+                    <SendButton>Enviar</SendButton>
                 </InputContainer >
             </RegisterContainer >
 

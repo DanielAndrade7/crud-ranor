@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { GoBackButton } from '../RegisterPage/styled'
 import { goTo } from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
-import { Container, TextContainer, ContactListContainer, ContactContainer, EditAndDeleteButton } from './styled'
+import { Container, TextContainer, ContactListContainer, ContactContainer, EditAndDeleteButton, GoBackButton } from './styled'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
 import {DetailsContacts} from "../../DetailsContact/DetailsContacts"
@@ -21,7 +20,7 @@ const ContactsPage = () => {
                 setUsers(res.data)
             })
             .catch((error) => {
-
+                console.log(error.message)
             })
     })
 
