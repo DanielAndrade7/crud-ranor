@@ -35,7 +35,7 @@ export const DetailsContacts = ({ contact }) => {
     return ( <>
         <ShadowModal></ShadowModal>
         <Container>
-            <TitleContainer>Edite</TitleContainer>
+            <TitleContainer>Edite o cadastro</TitleContainer>
             <InputContainer onSubmit={editUser} >
                 <Wrapper>
                 <Label>Nome:</Label>
@@ -72,8 +72,8 @@ export const DetailsContacts = ({ contact }) => {
                     title={"The phone must have at least 11 numbers"}
                 />
                 </Wrapper>
-                <SendButton>Save</SendButton>
-                <SendButton>Contacts</SendButton>
+                <SendButton>Salvar</SendButton>
+                <SendButton>Voltar</SendButton>
             </InputContainer >
 
         </Container>

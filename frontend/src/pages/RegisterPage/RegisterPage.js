@@ -73,7 +73,7 @@ const RegisterPage = () => {
                 </InputContainer >
             </RegisterContainer >
 
-            <GoBackButton onClick={() => goTo(navigate, "contacts")}>Contacts</GoBackButton>
+            <GoBackButton onClick={() => goTo(navigate, "contacts")}>Contatos</GoBackButton>
         </Container >
     )
 }

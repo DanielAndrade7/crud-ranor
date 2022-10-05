@@ -42,7 +42,7 @@ const ContactsPage = () => {
 
     return (
         <Container>
-            <TextContainer>Contacts</TextContainer>
+            <TextContainer>Lista de Contatos</TextContainer>
             {popUp && render}
 
             <ContactListContainer>
@@ -56,13 +56,13 @@ const ContactsPage = () => {
                             <p>{name}</p>
                             <p>{email}</p>
                             <p>{phone}</p>
-                            <EditAndDeleteButton onClick={() => onClickPopUp(contact)}>Details</EditAndDeleteButton>
-                            <EditAndDeleteButton onClick={() => deleteUser(contact.id)}>Delete</EditAndDeleteButton>
+                            <EditAndDeleteButton onClick={() => onClickPopUp(contact)}>Editar</EditAndDeleteButton>
+                            <EditAndDeleteButton onClick={() => deleteUser(contact.id)}>Deletar</EditAndDeleteButton>
                         </ContactContainer>
                     )
                 })}
             </ContactListContainer>
-            <GoBackButton onClick={() => goTo(navigate, "/")}>Register User</GoBackButton>
+            <GoBackButton onClick={() => goTo(navigate, "/")}>Fazer Cadastro</GoBackButton>
         </Container>
     )
 }
